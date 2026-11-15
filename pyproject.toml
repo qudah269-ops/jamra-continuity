@@ -1,0 +1,25 @@
+[project]
+name = "jamra-continuity"
+version = "0.1.0"
+description = "Carry the harmonized fire record across the Suomi NPP retirement with measured NOAA-20 factors (NASA Space Apps 2026)"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.11"
+dependencies = [
+    "numpy>=2.4.6",
+    "pandas>=3.1.1",
+    "pyarrow>=26.0.1",
+    "duckdb==1.4.3",
+]
+
+[project.scripts]
+jamra-continuity = "jamra_continuity.model:main"
+
+[build-system]
+requires = ["uv_build>=0.13.7,<0.14.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.2.0",
+]
